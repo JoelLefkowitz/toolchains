@@ -6,8 +6,8 @@
 ![Version](https://img.shields.io/npm/v/toolchain)
 ![Downloads](https://img.shields.io/npm/dw/toolchain)
 ![Size](https://img.shields.io/bundlephobia/min/toolchain)
-![Quality](https://img.shields.io/codacy/grade/...)
-![Coverage](https://img.shields.io/codacy/coverage/...)
+![Quality](https://img.shields.io/codacy/grade/8fd441672bfe400581ef07dfb59eda5c)
+![Coverage](https://img.shields.io/codacy/coverage/8fd441672bfe400581ef07dfb59eda5c)
 
 ## Motivation
 
@@ -94,3 +94,4 @@ Lots of love to the open source community!
     <img width=200 height=200 src='https://media.giphy.com/media/KEAAbQ5clGWJwuJuZB/giphy.gif' alt='Love each other' />
     <img width=200 height=200 src='https://media.giphy.com/media/WRWykrFkxJA6JJuTvc/giphy.gif' alt="It's ok to have a bad day" />
 </div>
+
