@@ -40,6 +40,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*", "tests/fixtures"],
+  "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"]
 }
