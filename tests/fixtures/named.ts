@@ -1,7 +1,7 @@
-export const name = "Example";
+export const name = "example";
 
 export const description = "Does nothing";
 
-export const task = () => {
+export const action = () => {
   console.log("Running");
 };

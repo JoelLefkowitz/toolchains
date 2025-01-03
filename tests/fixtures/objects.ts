@@ -1,7 +1,7 @@
 export default {
-  name: "Example",
+  name: "example",
   description: "Does nothing",
-  task: () => {
+  action: () => {
     console.log("Running");
   },
 };
