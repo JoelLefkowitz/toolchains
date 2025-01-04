@@ -1,6 +1,7 @@
 import { collect } from "./services/collectors";
 import { glob } from "glob";
 import { hideBin } from "yargs/helpers";
+import { transpile } from "./services/transpilers";
 import path from "path";
 import yargs from "yargs";
 
@@ -42,13 +43,19 @@ const cli = yargs(hideBin(process.argv))
     console.log("Found files:", files);
   }
 
-  const tasks = await collect(files);
+  const modules = await transpile(files);
 
   if (debug) {
-    console.log("Found tasks:", tasks);
+    console.log("Transpiled files:", modules);
   }
 
-  tasks
+  const scripts = modules.map(collect);
+
+  if (debug) {
+    console.log("Found scripts:", scripts);
+  }
+
+  scripts
     .reduce(
       (acc, { name, description, action }) =>
         action ? acc.command(name, description, action) : acc,

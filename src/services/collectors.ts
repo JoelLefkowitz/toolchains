@@ -1,53 +1,49 @@
-import { Task } from "../models/Task.model";
+import { Module } from "../models/Module.model";
+import { Script } from "../models/Script.model";
 import { guard, isRecord, isString } from "reviewed";
 import { head } from "../containers/strings";
 import { isAction } from "../containers/guards";
 
-export const collect = (files: string[]): Promise<Task[]> =>
-  Promise.all(
-    files.map(async (file) => {
-      const imported = (await import(file)) as Record<string, unknown>;
+export const collect = ({ file, imported }: Module): Script => {
+  const script: Script = {
+    name: head(file),
+    description: "",
+    action: null,
+  };
 
-      const task: Task = {
-        name: head(file),
-        description: "",
-        action: null,
-      };
+  if (guard(isString)(imported.name)) {
+    script.name = imported.name;
+  }
 
-      if (guard(isString)(imported.name)) {
-        task.name = imported.name;
+  if (guard(isString)(imported.description)) {
+    script.description = imported.description;
+  }
+
+  if (isAction(imported.action)) {
+    script.action = imported.action;
+  }
+
+  if (isAction(imported.default)) {
+    script.action = imported.default;
+  } else {
+    const $default = isRecord(imported.default);
+
+    if ($default.valid) {
+      const { parsed } = $default;
+
+      if (guard(isString)(parsed.name)) {
+        script.name = parsed.name;
       }
 
-      if (guard(isString)(imported.description)) {
-        task.description = imported.description;
+      if (guard(isString)(parsed.description)) {
+        script.description = parsed.description;
       }
 
-      if (isAction(imported.action)) {
-        task.action = imported.action;
+      if (isAction(parsed.action)) {
+        script.action = parsed.action;
       }
+    }
+  }
 
-      if (isAction(imported.default)) {
-        task.action = imported.default;
-      } else {
-        const $default = isRecord(imported.default);
-
-        if ($default.valid) {
-          const { parsed } = $default;
-
-          if (guard(isString)(parsed.name)) {
-            task.name = parsed.name;
-          }
-
-          if (guard(isString)(parsed.description)) {
-            task.description = parsed.description;
-          }
-
-          if (isAction(parsed.action)) {
-            task.action = parsed.action;
-          }
-        }
-      }
-
-      return task;
-    }),
-  );
+  return script;
+};

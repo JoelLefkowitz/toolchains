@@ -1,35 +1,45 @@
 import { collect } from "./collectors";
-import path from "path";
-
-const fixtures = path.resolve(__dirname, "../../tests/fixtures");
 
 describe("collect", () => {
-  it("parses a default exported task", async () => {
-    const [{ name, description, action }] = await collect([
-      path.join(fixtures, "objects.ts"),
-    ]);
+  it("parses a default exported script", () => {
+    const { name, description, action } = collect({
+      file: "",
+      imported: {
+        name: "example",
+        description: "Does nothing",
+        action: () => {},
+      },
+    });
 
     expect(name).toBe("example");
     expect(description).toBe("Does nothing");
     expect(action).toBeTruthy();
   });
 
-  it("parses a named exported task", async () => {
-    const [{ name, description, action }] = await collect([
-      path.join(fixtures, "named.ts"),
-    ]);
+  it("parses a named exported script", () => {
+    const { name, description, action } = collect({
+      file: "",
+      imported: {
+        default: {
+          name: "example",
+          description: "Does nothing",
+          action: () => {},
+        },
+      },
+    });
 
     expect(name).toBe("example");
     expect(description).toBe("Does nothing");
     expect(action).toBeTruthy();
   });
 
-  it("parses a default exported function", async () => {
-    const [{ name, description, action }] = await collect([
-      path.join(fixtures, "functions.ts"),
-    ]);
+  it("parses a default exported function", () => {
+    const { name, description, action } = collect({
+      file: "example",
+      imported: { default: () => {} },
+    });
 
-    expect(name).toBe("functions");
+    expect(name).toBe("example");
     expect(description).toBe("");
     expect(action).toBeTruthy();
   });
