@@ -11,6 +11,7 @@ module.exports = {
   output: {
     file: "dist/bundle.js",
     format: "cjs",
+    banner: "#!/usr/bin/env node",
   },
   treeshake: "smallest",
   plugins: [
