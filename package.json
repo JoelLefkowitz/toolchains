@@ -32,7 +32,7 @@
     "lint": "cspell . --dot --gitignore && eslint . --fix && tsc --noEmit && trufflehog3 -c .trufflehog3.yaml",
     "format": "prettier . --write",
     "build": "rollup -c rollup.config.js",
-    "test": "jest",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "docs": "typedoc --options docs/typedoc/typedoc.json && ts-node ./docs/typedoc/assets.ts"
   },
   "resolutions": {
@@ -69,6 +69,7 @@
     "rollup": "^4.29.1",
     "ts-jest": "^29.0.0",
     "ts-node": "^10.9.2",
+    "tscw-config": "^1.0.1",
     "tslib": "^2.3.0",
     "typedoc": "^0.25.7",
     "typedoc-material-theme": "^1.0.2",

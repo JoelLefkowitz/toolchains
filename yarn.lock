@@ -5900,6 +5900,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strip-json-comments@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "strip-json-comments@npm:5.0.1"
+  checksum: 10c0/c9d9d55a0167c57aa688df3aa20628cf6f46f0344038f189eaa9d159978e80b2bfa6da541a40d83f7bde8a3554596259bf6b70578b2172356536a0e3fa5a0982
+  languageName: node
+  linkType: hard
+
 "supports-color@npm:^5.5.0":
   version: 5.5.0
   resolution: "supports-color@npm:5.5.0"
@@ -6036,6 +6043,7 @@ __metadata:
     rollup: "npm:^4.29.1"
     ts-jest: "npm:^29.0.0"
     ts-node: "npm:^10.9.2"
+    tscw-config: "npm:^1.0.1"
     tslib: "npm:^2.3.0"
     typedoc: "npm:^0.25.7"
     typedoc-material-theme: "npm:^1.0.2"
@@ -6143,6 +6151,19 @@ __metadata:
   version: 9.6.0
   resolution: "ts-toolbelt@npm:9.6.0"
   checksum: 10c0/838f9a2f0fe881d5065257a23b402c41315b33ff987b73db3e2b39fcb70640c4c7220e1ef118ed5676763543724fdbf4eda7b0e2c17acb667ed1401336af9f8c
+  languageName: node
+  linkType: hard
+
+"tscw-config@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "tscw-config@npm:1.0.1"
+  dependencies:
+    strip-json-comments: "npm:^5.0.1"
+  peerDependencies:
+    typescript: ">=2.0.0"
+  bin:
+    tscw: dist/cli.js
+  checksum: 10c0/d65bcab72eed886d2e655ea17444e3b2fc1d07ca5618cb4f05602c58a89196f5499589b34c410c6d86b637fda9b056f69b0622940b664f450c73c6701d0bc99e
   languageName: node
   linkType: hard
 

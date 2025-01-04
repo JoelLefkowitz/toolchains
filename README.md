@@ -88,14 +88,21 @@ export default function () {
 }
 ```
 
-### Transpilation
-
-To parse TypeScript files `tsc` is invoked in a temporary directory. Unfortunately `ts-node` does not allow you to consume the parsed module contents and dynamic imports won't accept typescript syntax without transpilation first.
-
 ### Options
 
 - `--path` - Set the search path
 - `--include` - Set the include pattern
+
+## Design
+
+### Transpilation
+
+Unfortunately `ts-node` does not allow you to consume the parsed module contents and dynamic imports won't accept typescript syntax without transpilation first. 
+To parse TypeScript files while respecting any `tsconfig.json` options `tscw-config` is used and the transpilation is performed in a temporary directory.
+
+### Limitations
+
+Libraries imported from the scripts aren't resolved by the TypeScript compiler.
 
 ## Tooling
 
