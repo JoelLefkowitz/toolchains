@@ -1,11 +1,11 @@
 {
-  "name": "toolchain",
+  "name": "toolchains",
   "description": "Generate a command line interface for local scripts.",
   "version": "0.3.0",
   "license": "MIT",
   "author": "Joel Lefkowitz",
-  "repository": "https://github.com/joellefkowitz/toolchain",
-  "homepage": "https://joellefkowitz.github.io/toolchain",
+  "repository": "https://github.com/joellefkowitz/toolchains",
+  "homepage": "https://joellefkowitz.github.io/toolchains",
   "bin": "dist/bundle.js",
   "files": [
     "dist"

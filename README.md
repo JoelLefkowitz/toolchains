@@ -1,11 +1,11 @@
-# Toolchain
+# Toolchains
 
 Generate a command line interface for local scripts.
 
-![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/toolchain/review.yaml)
-![Version](https://img.shields.io/npm/v/toolchain)
-![Downloads](https://img.shields.io/npm/dw/toolchain)
-![Size](https://img.shields.io/bundlephobia/min/toolchain)
+![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/toolchains/review.yaml)
+![Version](https://img.shields.io/npm/v/toolchains)
+![Downloads](https://img.shields.io/npm/dw/toolchains)
+![Size](https://img.shields.io/bundlephobia/min/toolchains)
 ![Quality](https://img.shields.io/codacy/grade/8fd441672bfe400581ef07dfb59eda5c)
 ![Coverage](https://img.shields.io/codacy/coverage/8fd441672bfe400581ef07dfb59eda5c)
 
@@ -21,10 +21,10 @@ scripts
 This package generates a command line interface for them:
 
 ```
-toolchain <command>
+toolchains <command>
 
 Commands:
-  toolchain lint    Run linters
+  toolchains lint    Run linters
 
 Options:
   -p, --path     Set the search path                        [default: "scripts"]
@@ -49,7 +49,7 @@ export default {
 Then the command line interface can be invoked:
 
 ```bash
-toolchain lint
+toolchains lint
 ```
 
 ```txt
@@ -59,12 +59,12 @@ Running linters...
 ## Installing
 
 ```bash
-npm install toolchain
+npm install toolchains
 ```
 
 ## Documentation
 
-Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/toolchain).
+Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/toolchains).
 
 ## Usage
 

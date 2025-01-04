@@ -7,7 +7,7 @@ import yargs from "yargs";
 const version = "0.3.0";
 
 const cli = yargs(hideBin(process.argv))
-  .scriptName("toolchain")
+  .scriptName("toolchains")
   .version(version)
   .option("path", {
     alias: "p",
