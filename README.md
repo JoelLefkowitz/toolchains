@@ -1,6 +1,6 @@
 # Toolchain
 
-...
+Generate a command line interface for local scripts.
 
 ![Review](https://img.shields.io/github/actions/workflow/status/JoelLefkowitz/toolchain/review.yaml)
 ![Version](https://img.shields.io/npm/v/toolchain)
@@ -11,7 +11,50 @@
 
 ## Motivation
 
-...
+Often projects have local scripts:
+
+```txt
+scripts
+  └── lint.ts
+```
+
+This package generates a command line interface for them:
+
+```
+toolchain <command>
+
+Commands:
+  toolchain lint    Run linters
+
+Options:
+  -p, --path     Set the search path                        [default: "scripts"]
+  -i, --include  Set the include pattern                       [default: "*.ts"]
+  -d, --debug    Enable debug logging                                  [boolean]
+  -h, --help     Show help                                             [boolean]
+  -v, --version  Show version number                                   [boolean]
+```
+
+The scripts can be written in TypeScript:
+
+```ts
+export default {
+  name: "lint",
+  description: "Run linters",
+  action: () => {
+    console.log("Running linters...");
+  },
+};
+```
+
+Then the command line interface can be invoked:
+
+```bash
+toolchain lint
+```
+
+```txt
+Running linters...
+```
 
 ## Installing
 
@@ -25,7 +68,30 @@ Documentation and more detailed examples are hosted on [Github Pages](https://jo
 
 ## Usage
 
-...
+You can use named exports for the `name`, `description` and `action`:
+
+```ts
+export const name = "example";
+
+export const description = "Does nothing";
+
+export const action = () => {
+  console.log("Running");
+};
+```
+
+You can also default export a function on its own:
+
+```ts
+export default function () {
+  console.log("Running");
+}
+```
+
+### Options
+
+- `--path` - Set the search path
+- `--include` - Set the include pattern
 
 ## Tooling
 
