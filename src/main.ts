@@ -4,7 +4,7 @@ import { hideBin } from "yargs/helpers";
 import path from "path";
 import yargs from "yargs";
 
-const version = "0.3.0";
+const version = "0.4.0";
 
 const cli = yargs(hideBin(process.argv))
   .scriptName("toolchains")
