@@ -28,7 +28,7 @@
     "lifecycle": "Alpha"
   },
   "scripts": {
-    "postinstall": "husky",
+    "_postinstall": "husky",
     "lint": "cspell . --dot --gitignore && eslint . --fix && tsc --noEmit && trufflehog3 -c .trufflehog3.yaml",
     "format": "prettier . --write",
     "build": "rollup -c rollup.config.js",
