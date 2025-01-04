@@ -3,5 +3,5 @@
     "^.+\\.ts$": ["ts-jest", { "isolatedModules": true }]
   },
   "modulePathIgnorePatterns": ["dist"],
-  "coverage": true
+  "collectCoverage": true
 }
