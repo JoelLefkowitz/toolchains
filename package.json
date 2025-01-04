@@ -1,7 +1,7 @@
 {
   "name": "toolchains",
   "description": "Generate a command line interface for local scripts.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "license": "MIT",
   "author": "Joel Lefkowitz",
   "repository": "https://github.com/joellefkowitz/toolchains",

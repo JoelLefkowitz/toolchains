@@ -5,7 +5,7 @@ import { transpile } from "./services/transpilers";
 import path from "path";
 import yargs from "yargs";
 
-const version = "0.5.0";
+const version = "0.6.0";
 
 const cli = yargs(hideBin(process.argv))
   .scriptName("toolchains")
