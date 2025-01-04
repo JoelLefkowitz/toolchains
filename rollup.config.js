@@ -15,11 +15,19 @@ module.exports = {
   },
   treeshake: "smallest",
   plugins: [
-    { buildStart: () => fs.rmdirSync("dist", { recursive: true }) },
-    { buildStart: () => spawnSync("npx", ["tsc"], { stdio: "inherit" }) },
+    {
+      buildStart: () => {
+        fs.rmdirSync("dist", { recursive: true, force: true });
+        spawnSync("npx", ["tsc"], { stdio: "inherit" });
+      },
+    },
     nodeResolve({ preferBuiltins: true }),
     commonjs({ ignoreDynamicRequires: true }),
     terser(),
-    { buildEnd: () => globSync("dist/main.*").map(unary(fs.rmSync)) },
+    {
+      buildEnd: () => {
+        globSync("dist/main.*").map(unary(fs.rmSync));
+      },
+    },
   ],
 };
