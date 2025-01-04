@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     {
       buildStart: () => {
-        fs.rmdirSync("dist", { recursive: true, force: true });
+        fs.rmSync("dist", { force: true, recursive: true });
         spawnSync("npx", ["tsc"], { stdio: "inherit" });
       },
     },
