@@ -13,6 +13,7 @@ exclude:
   - message: Tooling outputs
     paths:
       - coverage
+      - dist
       - docs/dist
       - package-lock.json
       - yarn-error.log
